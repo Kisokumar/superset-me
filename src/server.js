@@ -12,8 +12,8 @@ app.get("/", (req, res) => {
   res.send("Welcome to the Superset.me API!");
 });
 
-// app.use("/sessions", sessionRouter);
-// app.use("/users", userRouter);
+app.use("/sessions", sessionRouter);
+app.use("/users", userRouter);
 
 port = 3000;
 
