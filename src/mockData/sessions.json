@@ -1,0 +1,16 @@
+{
+    "sessionsData": [
+        {
+            "date": "11/11/2022",
+            "muscleGroup": "push"
+        },
+        {
+            "date": "12/11/2022",
+            "muscleGroup": "pull"
+        },
+        {
+            "date": "14/11/2022",
+            "muscleGroup": "legs"
+        }
+    ]
+}

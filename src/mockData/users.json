@@ -1,0 +1,16 @@
+{
+    "usersData": [
+        {
+            "username": "daffy@duck.com",
+            "password": "goofy"
+        },
+        {
+            "username": "arnold@schwarzenegger.com",
+            "password": "getToTheChopper"
+        },
+        {
+            "username": "someone@gmail.com",
+            "password": "asdfsAS2@1"
+        }
+    ]
+}
