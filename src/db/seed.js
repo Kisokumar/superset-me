@@ -6,9 +6,9 @@ const { Exercise, User, Session } = require("../models/index");
 const seed = async () => {
   await db.sync({ force: true });
 
-  const userSeedPath = path.join(__dirname, "../mockData/users.json");
-  const exerciseSeedPath = path.join(__dirname, "../mockData/exercises.json");
-  const sessionSeedPath = path.join(__dirname, "../mockData/sessions.json");
+  const userSeedPath = path.join(__dirname, "./mocks/users.json");
+  const exerciseSeedPath = path.join(__dirname, "./mocks/exercises.json");
+  const sessionSeedPath = path.join(__dirname, "./mocks/sessions.json");
 
   const buffer = await fs.readFile(userSeedPath);
   const exerciseBuffer = await fs.readFile(exerciseSeedPath);
