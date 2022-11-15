@@ -5,7 +5,14 @@ const Exercise = db.define("exercises", {
   name: DataTypes.STRING,
   repsDone: DataTypes.INTEGER,
   weightDone: DataTypes.INTEGER,
-  muscleGroup: DataTypes.STRING,
+  muscleGroup: DataTypes.ENUM(
+    "chest",
+    "triceps",
+    "back",
+    "biceps",
+    "shoulders",
+    "legs"
+  ),
   sessionId: { type: DataTypes.INTEGER, allowNull: false },
 });
 

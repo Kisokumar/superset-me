@@ -7,14 +7,7 @@ const Session = db.define("sessions", {
     primaryKey: true,
   },
   date: { type: DataTypes.STRING, allowNull: false },
-  type: DataTypes.ENUM(
-    "chest",
-    "triceps",
-    "back",
-    "biceps",
-    "shoulders",
-    "legs"
-  ),
+  type: DataTypes.ENUM("push", "pull", "legs"),
   userId: { type: DataTypes.TEXT, allowNull: false },
 });
 
