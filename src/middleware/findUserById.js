@@ -1,7 +1,7 @@
 const { User } = require("../models");
 
 async function findUser(req, res, next) {
-  req.user = await User.findByPk(req.params.id);
+  req.user = await User.findByPk(req.params.userId);
   if (!req.user) {
     res.status(500).json("User not found!");
   } else {

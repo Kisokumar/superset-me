@@ -1,7 +1,7 @@
 const { Session } = require("../models");
 
-async function findSession(req, res, next) {
-  req.session = await Session.findByPk(req.params.id);
+async function findSessionById(req, res, next) {
+  req.session = await Session.findByPk(req.params.sessionId);
   if (!req.session) {
     res.status(500).json("Session does not exist!");
   } else {
@@ -9,4 +9,4 @@ async function findSession(req, res, next) {
   }
 }
 
-module.exports = findSession;
+module.exports = findSessionById;
