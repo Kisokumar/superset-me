@@ -8,6 +8,4 @@ User.hasMany(Session);
 Exercise.belongsTo(Session);
 Session.hasMany(Exercise);
 
-User.hasMany(Exercise);
-
 module.exports = { Session, User, Exercise };
