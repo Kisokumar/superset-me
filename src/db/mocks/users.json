@@ -1,16 +1,23 @@
 {
     "usersData": [
         {
-            "username": "daffy@duck.com",
-            "password": "goofy"
+            "username": "dafduck",
+            "password": "goofy",
+            "email": "daffy@duck.com",
+            "firstname": "daffy",
+            "lastname": "duck"
         },
         {
-            "username": "arnold@schwarzenegger.com",
-            "password": "getToTheChopper"
+            "username": "randuser",
+            "password": "asdfsAS2@1",
+            "email":"someone@random.com"
         },
         {
-            "username": "someone@gmail.com",
-            "password": "asdfsAS2@1"
+            "username": "arnshwarz",
+            "password": "getToTheChopper",
+            "email":"arnold@schwarzenegger.com",
+            "firstname": "arnold",
+            "lastname": "schwarzenegger"
         }
     ]
 }
