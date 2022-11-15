@@ -1,7 +1,7 @@
 const express = require("express");
 const { Session, User, Exercise } = require("../models");
-const findSession = require("../middleware/findSession");
-// const findUser = require("../middleware/findUser");
+const findSessionById = require("../middleware/findSessionById");
+// const findUser = require("../middleware/findUserById");
 
 const sessionRouter = express.Router();
 
@@ -16,7 +16,7 @@ sessionRouter.get("/", async (req, res) => {
 });
 
 // get session by id
-sessionRouter.get("/:id", findSession, async (req, res) => {
+sessionRouter.get("/:sessionId", findSessionById, async (req, res) => {
   try {
     const session = { session: req.session };
     res.status(200).send(session);
