@@ -7,7 +7,14 @@ const Session = db.define("sessions", {
     primaryKey: true,
   },
   date: { type: DataTypes.STRING, allowNull: false },
-  muscleGroup: DataTypes.ENUM("push", "pull", "legs"),
+  type: DataTypes.ENUM(
+    "chest",
+    "triceps",
+    "back",
+    "biceps",
+    "shoulders",
+    "legs"
+  ),
   userId: { type: DataTypes.TEXT, allowNull: false },
 });
 
