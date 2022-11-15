@@ -2,17 +2,17 @@
     "sessionsData": [
         {
             "date": "11/11/2022",
-            "muscleGroup": "push",
+            "type": "push",
             "userId": 1
         },
         {
             "date": "12/11/2022",
-            "muscleGroup": "pull",
+            "type": "pull",
             "userId": 1
         },
         {
             "date": "14/11/2022",
-            "muscleGroup": "legs",
+            "type": "legs",
             "userId": 2
         }
     ]
