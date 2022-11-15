@@ -6,7 +6,7 @@ const Exercise = db.define("exercises", {
   repsDone: DataTypes.INTEGER,
   weightDone: DataTypes.INTEGER,
   muscleGroup: DataTypes.STRING,
-  sessionId: DataTypes.INTEGER,
+  sessionId: { type: DataTypes.INTEGER, allowNull: false },
 });
 
 //exports
