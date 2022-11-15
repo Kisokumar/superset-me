@@ -19,11 +19,11 @@ const seed = async () => {
   const { sessionsData } = JSON.parse(String(sessionBuffer));
 
   const UserPromises = usersData.map((user) => User.create(user));
-  const ExercisePromises = exercisesData.map((exercise) =>
-    Exercise.create(exercise)
-  );
   const SessionPromises = sessionsData.map((session) =>
     Session.create(session)
+  );
+  const ExercisePromises = exercisesData.map((exercise) =>
+    Exercise.create(exercise)
   );
 
   await Promise.all(UserPromises);

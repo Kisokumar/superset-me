@@ -2,11 +2,19 @@
     "exercisesData": [
         {
             "name": "Dumbell Overhead Tricep Extension",
-            "muscleGroup": "Triceps"
+            "muscleGroup": "Triceps",
+            "weightDone": 20,
+            "repsDone": 12,
+            "sessionId":1,
+            "userId":1
         },
         {
             "name": "Skull Crusher",
-            "muscleGroup": "Triceps"
+            "muscleGroup": "Triceps",
+            "weightDone": 12,
+            "repsDone": 8,
+            "sessionId":1,
+            "userId":1
         }
     ]
 }
