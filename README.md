@@ -107,3 +107,18 @@
 `GET /sessions/` - Get all sessions
 
 `GET /sessions/:sessionId` - Get session by id
+
+</details>
+
+<details open='open'>
+  <summary><h2 style="display: inline-block"> 💪 Coming Soon! </h2></summary>
+
+- [x] Ability to get user by username
+
+- [ ] Ability to add users by delete user by username/id
+
+- [ ] Ability to change username (while retaining original id)
+
+- [ ] Followers (ability to visit friend profiles if both (visitor and visitee) users have accepted)
+
+</details>
