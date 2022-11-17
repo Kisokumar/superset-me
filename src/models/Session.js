@@ -1,4 +1,5 @@
 const { db, DataTypes } = require("../db/db.js");
+const formatDate = require("../middleware/formatDate");
 
 const Session = db.define("sessions", {
   id: {
@@ -6,9 +7,17 @@ const Session = db.define("sessions", {
     autoIncrement: true,
     primaryKey: true,
   },
-  date: { type: DataTypes.STRING, allowNull: false },
-  type: DataTypes.ENUM("push", "pull", "legs"),
-  userId: { type: DataTypes.TEXT, allowNull: false },
+  date: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    defaultValue: formatDate(),
+  },
+  type: {
+    type: DataTypes.ENUM("push", "pull", "legs"),
+    allowNull: false,
+    defaultValue: "uncategorised",
+  },
+  userId: { type: DataTypes.INTEGER, allowNull: false },
 });
 
 module.exports = { Session };

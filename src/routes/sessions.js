@@ -25,4 +25,19 @@ sessionRouter.get("/:sessionId", findSessionById, async (req, res) => {
   }
 });
 
+// create session with id
+sessionRouter.put("/new", async (req, res) => {
+  try {
+    const newSession = await Session.create(req.body);
+    const user = await User.findOne({ where: { id: req.body.userId } });
+    res
+      .status(200)
+      .send(
+        `Successfully created new ${newSession.type} session for ${user.username} @ ${newSession.date}!`
+      );
+  } catch (error) {
+    res.status(500).send("Could not create session.");
+  }
+});
+
 module.exports = sessionRouter;
