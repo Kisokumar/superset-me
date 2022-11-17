@@ -111,7 +111,7 @@
 </details>
 
 <details>
-  <summary><h2 style="display: inline-block"> 💪 Coming Soon! </h2></summary>
+  <summary><h2 style="display: inline-block"> ⌛ Coming Soon! </h2></summary>
 
 - [x] Get user by username
 
