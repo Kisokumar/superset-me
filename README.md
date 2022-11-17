@@ -84,7 +84,7 @@ Gym app to track your gains
 
 ---
 
-#### Users
+#### Sessions
 
 `PUT /sessions/new` - Create new user
 
@@ -96,3 +96,7 @@ Gym app to track your gains
    "type" : "legDay"
  }
 ```
+
+`GET /sessions/` - Get all sessions
+
+`GET /sessions/:sessionId` - Get session by id
