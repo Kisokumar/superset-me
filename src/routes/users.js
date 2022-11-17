@@ -25,13 +25,47 @@ userRouter.get("/:userId", findUserById, async (req, res) => {
   }
 });
 
-// get sessions by userId
+// get user by username
+userRouter.get("/username/:username", async (req, res) => {
+  try {
+    const user = await User.findOne({
+      where: { username: req.params.username },
+    });
+    if (user != null) {
+      res.status(200).send(user);
+    } else {
+      res.status(404).send("user not found!");
+    }
+
+    console.log(user);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+// get all previous sessions by userId
 userRouter.get("/:userId/sessions", findSessionByUserId, async (req, res) => {
   try {
     const sessions = { sessions: req.sessions };
     res.status(200).send(sessions);
   } catch (error) {
     res.status(500).json(error);
+  }
+});
+
+userRouter.put("/new", async (req, res) => {
+  try {
+    const user = await User.findOne({
+      where: { username: req.body.username },
+    });
+    if (!user) {
+      const newUser = await User.create(req.body);
+      res.status(200).send(`Successfully created user: ${newUser.username}`);
+    } else {
+      res.status(500).send("Username already in use!");
+    }
+  } catch (error) {
+    res.status(500).send("Could not create user.");
   }
 });
 
