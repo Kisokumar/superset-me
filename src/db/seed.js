@@ -19,16 +19,16 @@ const seed = async () => {
   const { sessionsData } = JSON.parse(String(sessionBuffer));
 
   const UserPromises = usersData.map((user) => User.create(user));
-  const SessionPromises = sessionsData.map((session) =>
-    Session.create(session)
-  );
-  const ExercisePromises = exercisesData.map((exercise) =>
-    Exercise.create(exercise)
-  );
+  // const SessionPromises = sessionsData.map((session) =>
+  //   Session.create(session)
+  // );
+  // const ExercisePromises = exercisesData.map((exercise) =>
+  //   Exercise.create(exercise)
+  // );
 
-  await Promise.all(UserPromises);
-  await Promise.all(ExercisePromises);
-  await Promise.all(SessionPromises);
+  // await Promise.all(UserPromises);
+  // await Promise.all(ExercisePromises);
+  // await Promise.all(SessionPromises);
 
   console.log("Database info populated!");
 };
