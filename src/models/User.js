@@ -13,6 +13,7 @@ const User = db.define("users", {
   email: { type: DataTypes.STRING, allowNull: false },
   firstname: { type: DataTypes.STRING, allowNull: true },
   lastname: { type: DataTypes.STRING, allowNull: true },
+  friends: { type: DataTypes.STRING },
 });
 
 module.exports = { User };
