@@ -14,7 +14,7 @@
 </p>
 
 <!-- TABLE OF CONTENTS -->
-<details open="open">
+<details>
   <summary><h2 style="display: inline-block"> 📋 Table of Contents</h2></summary>
   <ol>
     <li>
@@ -26,11 +26,18 @@
   </ol>
 </details>
 
+---
+
 <!-- ABOUT THE PROJECT -->
 
-## ✏️ About
+<details >
+  <summary><h2 style="display: inline-block"> ✏️ About</h2></summary>
+  <ol>
+  An app that helps you track your gains!
+  </ol>
+</details>
 
-Gym app to track your gains
+---
 
 ## 💻&nbsp; Technologies used
 
