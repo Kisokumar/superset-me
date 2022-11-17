@@ -47,7 +47,7 @@ Gym app to track your gains
 
 ---
 
-### Usage
+## Usage
 
 `npm i` - Install dependencies
 
@@ -55,9 +55,8 @@ Gym app to track your gains
 
 ---
 
-### Endpoints
-
-#### Users
+<details open="open">
+  <summary><h2 style="display: inline-block"> 👤 User Endpoints</h2></summary>
 
 `PUT /users/new` - Create new user
 
@@ -82,9 +81,10 @@ Gym app to track your gains
 
 `GET /users/username/:username/sessions` - Get sessions by username
 
----
+</details>
 
-#### Sessions
+<details open="open">
+  <summary><h2 style="display: inline-block"> 💪 Session Endpoints</h2></summary>
 
 `PUT /sessions/new` - Create new user
 
