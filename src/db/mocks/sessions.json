@@ -1,17 +1,14 @@
 {
     "sessionsData": [
         {
-            "date": "11/11/2022",
             "type": "push",
             "userId": 1
         },
         {
-            "date": "12/11/2022",
             "type": "pull",
             "userId": 1
         },
         {
-            "date": "14/11/2022",
             "type": "legs",
             "userId": 2
         }

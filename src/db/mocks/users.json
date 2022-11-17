@@ -10,7 +10,9 @@
         {
             "username": "randuser",
             "password": "asdfsAS2@1",
-            "email":"someone@random.com"
+            "email":"someone@random.com",
+            "firstname": "someone",
+            "lastname": "random"
         },
         {
             "username": "arnshwarz",
