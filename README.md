@@ -44,3 +44,55 @@ Gym app to track your gains
 <!-- ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) -->
 
 <!-- USAGE EXAMPLES -->
+
+---
+
+### Usage
+
+`npm i` - Install dependencies
+
+`npm run start` - Run server
+
+---
+
+### Endpoints
+
+#### Users
+
+`PUT /users/new` - Create new user
+
+> With the following JSON body format:
+
+```
+ {
+   "userId" : "exampleUserId"
+   "type" : "legDay"
+   "username" : "exampleuser",
+   "password" : "examplepassword"
+ }
+```
+
+`GET /users/` - Get all the users
+
+`GET /users/:userId` - Get user by id
+
+`GET /users/username/:username` - Get user by username
+
+`GET /users/userId/sessions` - Get sessions by userId
+
+`GET /users/username/:username/sessions` - Get sessions by username
+
+---
+
+#### Users
+
+`PUT /sessions/new` - Create new user
+
+> With the following JSON body format:
+
+```
+ {
+   "userId" : "exampleUserId"
+   "type" : "legDay"
+ }
+```
