@@ -13,27 +13,32 @@
   </p>
 </p>
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary><h2 style="display: inline-block"> 📋 Table of Contents</h2></summary>
+<!-- ABOUT THE PROJECT -->
+<!--
+<details >
+  <summary id="about" ><h2 style="display: inline-block"> ✏️ About</h2></summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Technologies used</a></li>
-      </ul>
-    </li>
+  An app that helps you track your gains!
   </ol>
-</details>
+</details> -->
 
 ---
 
-<!-- ABOUT THE PROJECT -->
-
-<details >
-  <summary><h2 style="display: inline-block"> ✏️ About</h2></summary>
+<!-- TABLE OF CONTENTS -->
+<details open="ope">
+  <summary><h2 style="display: inline-block"> 📋 Table of Contents</h2></summary>
   <ol>
-  An app that helps you track your gains!
+    <li> <a href="#about">About The Project</a> </li>
+    <li> <a href="#usage">Usage</a> </li>
+    <li>
+      <a href="#endpoints">Endpoints</a>
+        <ol>
+          <li> <a href="#userendpoints">User endpoint</a> </li>
+          <li> <a href="#sessionendpoints">Session endpoint</a> </li>
+        </ol>
+    </li>
+    <li> <a href="#comingsoon">Coming Soon!</a> </li>
+
   </ol>
 </details>
 
@@ -62,8 +67,10 @@
 
 ---
 
+## Endpoints
+
 <details open="open">
-  <summary><h2 style="display: inline-block"> 👤 User Endpoints</h2></summary>
+  <summary id="userendpoints" ><h2 style="display: inline-block"> 👤 User Endpoints</h2></summary>
 
 `PUT /users/new` - Create new user
 
@@ -91,7 +98,7 @@
 </details>
 
 <details open="open">
-  <summary><h2 style="display: inline-block"> 💪 Session Endpoints</h2></summary>
+  <summary id="sessionendpoints" ><h2 style="display: inline-block"> 💪 Session Endpoints</h2></summary>
 
 `PUT /sessions/new` - Create new user
 
@@ -111,7 +118,7 @@
 </details>
 
 <details>
-  <summary><h2 style="display: inline-block"> ⌛ Coming Soon! </h2></summary>
+  <summary><h2 id="comingsoon" style="display: inline-block"> ⌛ Coming Soon! </h2></summary>
 
 - [x] Get user by username
 
