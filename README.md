@@ -1,6 +1,6 @@
 <p align="center">
 
-  <h1 align="center">Superset.me! 🏋️‍♂️</h1>
+  <h1 align="center">🏋️‍♀️ Superset.me! 🏋️‍♂️</h1>
 
   <p align="center">
     Keep track of your workouts and PBs!
