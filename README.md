@@ -14,7 +14,7 @@
 </p>
 
 <!-- TABLE OF CONTENTS -->
-<details open="open">
+<details>
   <summary><h2 style="display: inline-block"> 📋 Table of Contents</h2></summary>
   <ol>
     <li>
@@ -26,11 +26,18 @@
   </ol>
 </details>
 
+---
+
 <!-- ABOUT THE PROJECT -->
 
-## ✏️ About
+<details >
+  <summary><h2 style="display: inline-block"> ✏️ About</h2></summary>
+  <ol>
+  An app that helps you track your gains!
+  </ol>
+</details>
 
-Gym app to track your gains
+---
 
 ## 💻&nbsp; Technologies used
 
@@ -44,3 +51,59 @@ Gym app to track your gains
 <!-- ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white) -->
 
 <!-- USAGE EXAMPLES -->
+
+---
+
+## Usage
+
+`npm i` - Install dependencies
+
+`npm run start` - Run server
+
+---
+
+<details open="open">
+  <summary><h2 style="display: inline-block"> 👤 User Endpoints</h2></summary>
+
+`PUT /users/new` - Create new user
+
+> With the following JSON body format:
+
+```
+ {
+   "userId" : "exampleUserId"
+   "type" : "legDay"
+   "username" : "exampleuser",
+   "password" : "examplepassword"
+ }
+```
+
+`GET /users/` - Get all the users
+
+`GET /users/:userId` - Get user by id
+
+`GET /users/username/:username` - Get user by username
+
+`GET /users/userId/sessions` - Get sessions by userId
+
+`GET /users/username/:username/sessions` - Get sessions by username
+
+</details>
+
+<details open="open">
+  <summary><h2 style="display: inline-block"> 💪 Session Endpoints</h2></summary>
+
+`PUT /sessions/new` - Create new user
+
+> With the following JSON body format:
+
+```
+ {
+   "userId" : "exampleUserId"
+   "type" : "legDay"
+ }
+```
+
+`GET /sessions/` - Get all sessions
+
+`GET /sessions/:sessionId` - Get session by id

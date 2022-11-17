@@ -5,8 +5,7 @@
             "password": "goofy",
             "email": "daffy@duck.com",
             "firstname": "daffy",
-            "lastname": "duck",
-            "friends": "2;3"
+            "lastname": "duck"
         },
         {
             "username": "randuser",
