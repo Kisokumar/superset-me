@@ -1,11 +1,12 @@
+const { Sequelize } = require("sequelize");
 const { db, DataTypes } = require("../db/db.js");
 const formatDate = require("../middleware/formatDate");
 
 const Session = db.define("sessions", {
   id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
+    type: Sequelize.UUID,
     primaryKey: true,
+    defaultValue: Sequelize.UUIDV4,
   },
   date: {
     type: DataTypes.STRING,
@@ -17,7 +18,7 @@ const Session = db.define("sessions", {
     allowNull: false,
     defaultValue: "uncategorised",
   },
-  userId: { type: DataTypes.INTEGER, allowNull: false },
+  userId: { type: Sequelize.UUID, allowNull: false },
 });
 
 module.exports = { Session };

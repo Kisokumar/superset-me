@@ -17,7 +17,7 @@ app.use("/users", userRouter);
 
 port = 3000;
 
-const resetDb = true;
+const resetDb = false;
 
 app.listen(port, () => {
   if (resetDb === true) {
