@@ -110,15 +110,15 @@
 
 </details>
 
-<details open='open'>
+<details>
   <summary><h2 style="display: inline-block"> 💪 Coming Soon! </h2></summary>
 
-- [x] Ability to get user by username
+- [x] Get user by username
 
-- [ ] Ability to add users by delete user by username/id
+- [ ] Delete user by username/uuid
 
-- [ ] Ability to change username (while retaining original id)
+- [ ] Change username (while retaining original uuid)
 
-- [ ] Followers (ability to visit friend profiles if both (visitor and visitee) users have accepted)
+- [ ] Followers functionality (visit friend profiles if both (visitor and visitee) users have accepted)
 
 </details>
