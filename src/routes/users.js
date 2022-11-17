@@ -1,7 +1,8 @@
 const express = require("express");
 const { Session, User, Exercise } = require("../models");
 const findUserById = require("../middleware/findUserById");
-const findSessionByUserId = require("../middleware/findSessionsByUserId");
+const findSessionsByUserId = require("../middleware/findSessionsByUserId");
+const findSessionsByUsername = require("../middleware/findSessionsByUsername");
 
 const userRouter = express.Router();
 
@@ -37,14 +38,14 @@ userRouter.get("/username/:username", async (req, res) => {
       res.status(404).send("user not found!");
     }
 
-    console.log(user);
+    console.log(user.id);
   } catch (error) {
     res.status(500).json(error);
   }
 });
 
 // get all previous sessions by userId
-userRouter.get("/:userId/sessions", findSessionByUserId, async (req, res) => {
+userRouter.get("/:userId/sessions", findSessionsByUserId, async (req, res) => {
   try {
     const sessions = { sessions: req.sessions };
     res.status(200).send(sessions);
@@ -52,6 +53,20 @@ userRouter.get("/:userId/sessions", findSessionByUserId, async (req, res) => {
     res.status(500).json(error);
   }
 });
+
+// get all previous sessions by userName
+userRouter.get(
+  "/username/:username/sessions",
+  findSessionsByUsername,
+  async (req, res) => {
+    try {
+      const sessions = { sessions: req.sessions };
+      res.status(200).send(sessions);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  }
+);
 
 userRouter.put("/new", async (req, res) => {
   try {
