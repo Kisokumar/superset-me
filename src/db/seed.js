@@ -6,6 +6,7 @@ const { Exercise, User, Session } = require("../models/index");
 const seed = async () => {
   await db.sync({ force: true });
 
+  /*
   const userSeedPath = path.join(__dirname, "./mocks/users.json");
   const exerciseSeedPath = path.join(__dirname, "./mocks/exercises.json");
   const sessionSeedPath = path.join(__dirname, "./mocks/sessions.json");
@@ -30,7 +31,11 @@ const seed = async () => {
   // await Promise.all(ExercisePromises);
   // await Promise.all(SessionPromises);
 
-  console.log("Database info populated!");
+  */
+
+  console.log("Database created!");
 };
+
+seed();
 
 module.exports = seed;

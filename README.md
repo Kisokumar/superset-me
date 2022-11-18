@@ -63,6 +63,8 @@
 
 `npm i` - Install dependencies
 
+`npm run seed` - Create database
+
 `npm run start` - Run server
 
 ---
