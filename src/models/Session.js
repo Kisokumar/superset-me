@@ -12,8 +12,7 @@ const Session = db.define("sessions", {
     allowNull: false,
   },
   type: {
-    type: DataTypes.ENUM("push", "pull", "legs"),
-    allowNull: false,
+    type: DataTypes.STRING,
     defaultValue: "uncategorised",
   },
   userId: { type: Sequelize.UUID, allowNull: false },

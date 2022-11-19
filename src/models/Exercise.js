@@ -1,3 +1,4 @@
+const { Sequelize } = require("sequelize");
 const { db, DataTypes } = require("../db/db.js");
 
 const Exercise = db.define("exercises", {
@@ -13,7 +14,7 @@ const Exercise = db.define("exercises", {
     "shoulders",
     "legs"
   ),
-  sessionId: { type: DataTypes.INTEGER, allowNull: false },
+  sessionId: { type: Sequelize.UUID, allowNull: false },
 });
 
 //exports
