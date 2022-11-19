@@ -15,6 +15,11 @@ const User = db.define("users", {
   lastname: { type: DataTypes.STRING, allowNull: true },
   age: { type: DataTypes.INTEGER, allowNull: true },
   friends: { type: DataTypes.STRING, allowNull: true },
+  public_account: {
+    type: DataTypes.BOOLEAN,
+    allowNull: false,
+    defaultValue: false,
+  },
 });
 
 module.exports = { User };
