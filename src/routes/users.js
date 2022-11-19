@@ -38,8 +38,6 @@ userRouter.get("/username/:username", async (req, res) => {
     } else {
       res.status(404).send("user not found!");
     }
-
-    console.log(user.id);
   } catch (error) {
     res.status(500).json(error);
   }
@@ -106,6 +104,42 @@ userRouter.put("/login", async (req, res) => {
     }
   } catch (error) {
     res.status(500).send("Could not login.");
+  }
+});
+
+// delete user by username
+userRouter.delete("/username/:username", async (req, res) => {
+  try {
+    const user = await User.findOne({
+      where: { username: req.params.username },
+    });
+    if (user != null) {
+      const user = await User.destroy({
+        where: { username: req.params.username },
+      });
+      res.status(200).send("Successfully deleted user");
+    } else {
+      res.status(404).send("User not found!");
+    }
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+// delete user by userId
+userRouter.delete("/:userId", async (req, res) => {
+  try {
+    const user = await User.findByPk(req.params.userId);
+    if (user != null) {
+      const user = await User.destroy({
+        where: { id: req.params.userId },
+      });
+      res.status(200).send("Successfully deleted");
+    } else {
+      res.status(404).send("User not found!");
+    }
+  } catch (error) {
+    res.status(500).json(error);
   }
 });
 
