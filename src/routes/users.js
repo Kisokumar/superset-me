@@ -86,4 +86,27 @@ userRouter.put("/new", async (req, res) => {
   }
 });
 
+userRouter.put("/login", async (req, res) => {
+  try {
+    const user = await User.findOne({
+      where: { username: req.body.username },
+    });
+    if (user) {
+      const match = await validatePassword(
+        req.body.username,
+        req.body.password
+      );
+      if (match == true) {
+        res.status(200).send(`Successfully logged in as ${user.username}`);
+      } else {
+        res.status(500).send("Log in unsuccessful.");
+      }
+    } else {
+      res.status(404).send("User does not exist!");
+    }
+  } catch (error) {
+    res.status(500).send("Could not login.");
+  }
+});
+
 module.exports = userRouter;
