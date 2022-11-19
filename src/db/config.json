@@ -5,6 +5,7 @@
       "user": "username",
       "port": "3306",
       "database": "databasename",
-      "password": "password"
+      "password": "password",
+      "dialect": "dialect"
     }
 }
