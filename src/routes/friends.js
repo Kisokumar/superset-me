@@ -30,7 +30,7 @@ friendRouter.get("/:userId", findUserById, async (req, res) => {
   }
 });
 
-// add friend - not working
+// add friend - need logic to check if friend already exists
 friendRouter.put("/add", async (req, res) => {
   try {
     const sender = req.body.sender;
