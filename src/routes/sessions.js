@@ -2,6 +2,7 @@ const express = require("express");
 const { Session, User, Exercise } = require("../models");
 const findSessionById = require("../middleware/findSessionById");
 // const findUser = require("../middleware/findUserById");
+const formatDate = require("../middleware/formatDate");
 
 const sessionRouter = express.Router();
 
@@ -30,6 +31,7 @@ sessionRouter.put("/new", async (req, res) => {
   try {
     const user = await User.findOne({ where: { id: req.body.userId } });
     if (user) {
+      req.body.date = formatDate();
       const newSession = await Session.create(req.body);
       res
         .status(200)

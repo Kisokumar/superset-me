@@ -1,6 +1,5 @@
 const { Sequelize } = require("sequelize");
 const { db, DataTypes } = require("../db/db.js");
-const formatDate = require("../middleware/formatDate");
 
 const Session = db.define("sessions", {
   id: {
@@ -11,11 +10,9 @@ const Session = db.define("sessions", {
   date: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: formatDate(),
   },
   type: {
-    type: DataTypes.ENUM("push", "pull", "legs"),
-    allowNull: false,
+    type: DataTypes.STRING,
     defaultValue: "uncategorised",
   },
   userId: { type: Sequelize.UUID, allowNull: false },
