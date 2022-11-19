@@ -2,7 +2,7 @@
     "dev": {
       "server": "serverip",
       "user": "username",
-      "port": "3306",
+      "port": "port",
       "database": "databasename",
       "password": "password",
       "dialect": "dialect"
