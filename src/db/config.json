@@ -1,7 +1,6 @@
 {
     "dev": {
       "server": "serverip",
-      "driver": "mysql",
       "user": "username",
       "port": "3306",
       "database": "databasename",
