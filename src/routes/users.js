@@ -3,6 +3,7 @@ const { Session, User, Exercise } = require("../models");
 const findUserById = require("../middleware/findUserById");
 const findSessionsByUserId = require("../middleware/findSessionsByUserId");
 const findSessionsByUsername = require("../middleware/findSessionsByUsername");
+const { validatePassword, hashPassword } = require("../middleware/password");
 
 const userRouter = express.Router();
 
@@ -74,6 +75,7 @@ userRouter.put("/new", async (req, res) => {
       where: { username: req.body.username },
     });
     if (!user) {
+      req.body.password = hashPassword(req.body.password);
       const newUser = await User.create(req.body);
       res.status(200).send(`Successfully created user: ${newUser.username}`);
     } else {
@@ -81,6 +83,29 @@ userRouter.put("/new", async (req, res) => {
     }
   } catch (error) {
     res.status(500).send("Could not create user.");
+  }
+});
+
+userRouter.put("/login", async (req, res) => {
+  try {
+    const user = await User.findOne({
+      where: { username: req.body.username },
+    });
+    if (user) {
+      const match = await validatePassword(
+        req.body.username,
+        req.body.password
+      );
+      if (match == true) {
+        res.status(200).send(`Successfully logged in as ${user.username}`);
+      } else {
+        res.status(500).send("Log in unsuccessful.");
+      }
+    } else {
+      res.status(404).send("User does not exist!");
+    }
+  } catch (error) {
+    res.status(500).send("Could not login.");
   }
 });
 
