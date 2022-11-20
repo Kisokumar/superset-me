@@ -13,19 +13,23 @@
   </p>
 </p>
 
-<!-- ABOUT THE PROJECT -->
-<!--
-<details >
+<details open="open">
   <summary id="about" ><h2 style="display: inline-block"> ✏️ About</h2></summary>
-  <ol>
-  An app that helps you track your gains!
-  </ol>
-</details> -->
+
+An app that helps you track your gains!
+
+Features of this API:
+
+- Encrypted password storage - bcrypt
+- Unique user ID - UUID
+- External database can be connected (see [external database](#database) section)
+
+</details>
 
 ---
 
 <!-- TABLE OF CONTENTS -->
-<details open="ope">
+<details open="open">
   <summary><h2 style="display: inline-block"> 📋 Table of Contents</h2></summary>
   <ol>
     <li> <a href="#about">About The Project</a> </li>
@@ -120,11 +124,24 @@
 </details>
 
 <details>
+  <summary><h2 id="database" style="display: inline-block"> 💾 External Database</h2></summary>
+
+1. edit line 4 of the file `"./src/db/db.js"` to match the following:
+
+   `location = "external"`
+
+2. edit the file `"./src/db/config.json"` according to whichever database provicer you have chosen
+
+</details>
+
+<details>
   <summary><h2 id="comingsoon" style="display: inline-block"> ⌛ Coming Soon! </h2></summary>
 
 - [x] Get user by username
 
-- [ ] Delete user by username/uuid
+- [x] Delete user by username/uuid
+
+- [ ] Use session tokens/ auth
 
 - [ ] Change username (while retaining original uuid)
 
