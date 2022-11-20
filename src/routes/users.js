@@ -1,8 +1,8 @@
 const express = require("express");
 const { Session, User, Exercise } = require("../models");
-const findUserById = require("../middleware/findUserById");
-const findSessionsByUserId = require("../middleware/findSessionsByUserId");
-const findSessionsByUsername = require("../middleware/findSessionsByUsername");
+const findUserById = require("../middleware/find/findUserById");
+const findSessionsByUserId = require("../middleware/find/findSessionsByUserId");
+const findSessionsByUsername = require("../middleware/find/findSessionsByUsername");
 const { validatePassword, hashPassword } = require("../middleware/password");
 
 const userRouter = express.Router();

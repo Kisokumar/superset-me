@@ -1,7 +1,7 @@
 const express = require("express");
 const { Session, User, Exercise } = require("../models");
-const findSessionById = require("../middleware/findSessionById");
-// const findUser = require("../middleware/findUserById");
+const findSessionById = require("../middleware/find/findSessionById");
+// const findUser = require("../middleware/find/findUserById");
 const formatDate = require("../middleware/formatDate");
 
 const sessionRouter = express.Router();

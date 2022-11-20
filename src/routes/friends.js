@@ -1,8 +1,8 @@
 // router for followers or 'friends'
 const express = require("express");
 const { Session, User } = require("../models");
-const findSessionById = require("../middleware/findSessionById");
-const findUserById = require("../middleware/findUserById");
+const findSessionById = require("../middleware/find/findSessionById");
+const findUserById = require("../middleware/find/findUserById");
 
 const friendRouter = express.Router();
 
