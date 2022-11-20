@@ -1,5 +1,5 @@
-const { Session } = require("../models");
-const { User } = require("../models");
+const { Session } = require("../../models");
+const { User } = require("../../models");
 
 async function findSessionsByUsername(req, res, next) {
   const user = await User.findOne({ where: { username: req.params.username } });

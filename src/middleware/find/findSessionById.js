@@ -1,4 +1,4 @@
-const { Session } = require("../models");
+const { Session } = require("../../models");
 
 async function findSessionById(req, res, next) {
   req.session = await Session.findByPk(req.params.sessionId);
