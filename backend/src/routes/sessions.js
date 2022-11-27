@@ -26,12 +26,15 @@ sessionRouter.get("/:sessionId", findSessionById, async (req, res) => {
   }
 });
 
-// create session with id
-sessionRouter.put("/new", async (req, res) => {
+// create session with username
+sessionRouter.put("/new/username/:username", async (req, res) => {
   try {
-    const user = await User.findOne({ where: { id: req.body.userId } });
+    const user = await User.findOne({
+      where: { username: req.params.username },
+    });
     if (user) {
       req.body.date = formatDate();
+      req.body.userId = user.id;
       const newSession = await Session.create(req.body);
       res
         .status(200)
