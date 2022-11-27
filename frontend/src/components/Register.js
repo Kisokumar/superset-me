@@ -11,6 +11,7 @@ function Register() {
   return (
     <section className="register">
       <form className="signupform">
+        <h2 className="welcome">Welcome to Superset.me</h2>
         <h1 className="signup">Sign Up</h1>
         <input
           onChange={(event) => updateAndCheckUser(event.target.value)}
