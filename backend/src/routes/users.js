@@ -7,21 +7,11 @@ const { validatePassword, hashPassword } = require("../middleware/password");
 
 const userRouter = express.Router();
 
-// get all sessions
+// get all users
 userRouter.get("/", async (req, res) => {
   try {
     const allUsers = await User.findAll();
-    res.status(200).send(allUsers);
-  } catch (error) {
-    res.status(500).json(error);
-  }
-});
-
-// get user by userId
-userRouter.get("/:userId", findUserById, async (req, res) => {
-  try {
-    const user = { user: req.user };
-    res.status(200).send(user);
+    res.status(200).json(allUsers);
   } catch (error) {
     res.status(500).json(error);
   }
@@ -34,7 +24,7 @@ userRouter.get("/username/:username", async (req, res) => {
       where: { username: req.params.username },
     });
     if (user != null) {
-      res.status(200).send(user);
+      res.status(200).json(user);
     } else {
       res.status(404).send("user not found!");
     }
@@ -43,15 +33,38 @@ userRouter.get("/username/:username", async (req, res) => {
   }
 });
 
-// get all previous sessions by userId
-userRouter.get("/:userId/sessions", findSessionsByUserId, async (req, res) => {
+// delete user by username
+userRouter.delete("/username/:username", async (req, res) => {
   try {
-    const sessions = { sessions: req.sessions };
-    res.status(200).send(sessions);
+    const user = await User.findOne({
+      where: { username: req.params.username },
+    });
+    if (user != null) {
+      const user = await User.destroy({
+        where: { username: req.params.username },
+      });
+      res.status(200).json("Successfully deleted user");
+    } else {
+      res.status(404).json("User not found!");
+    }
   } catch (error) {
     res.status(500).json(error);
   }
 });
+
+// get all previous sessions by userId
+userRouter.get(
+  "id/:userId/sessions",
+  findSessionsByUserId,
+  async (req, res) => {
+    try {
+      const sessions = { sessions: req.sessions };
+      res.status(200).send(sessions);
+    } catch (error) {
+      res.status(500).json(error);
+    }
+  }
+);
 
 // get all previous sessions by userName
 userRouter.get(
@@ -107,19 +120,36 @@ userRouter.put("/login", async (req, res) => {
   }
 });
 
-// delete user by username
-userRouter.delete("/username/:username", async (req, res) => {
+// get user by userId
+userRouter.get("/id/:userId", findUserById, async (req, res) => {
+  try {
+    const user = { user: req.user };
+    res.status(200).send(user);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+// get username by userId
+userRouter.get("/id/:userId/username", findUserById, async (req, res) => {
+  try {
+    const user = { user: req.user };
+    res.status(200).send(user.user.username);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+// Get UserId by Username
+userRouter.get("/username/:username/id", async (req, res) => {
   try {
     const user = await User.findOne({
       where: { username: req.params.username },
     });
-    if (user != null) {
-      const user = await User.destroy({
-        where: { username: req.params.username },
-      });
-      res.status(200).send("Successfully deleted user");
+    if (user) {
+      res.status(200).send(user.id);
     } else {
-      res.status(404).send("User not found!");
+      res.status(404).json("User not found!");
     }
   } catch (error) {
     res.status(500).json(error);
@@ -127,16 +157,24 @@ userRouter.delete("/username/:username", async (req, res) => {
 });
 
 // delete user by userId
-userRouter.delete("/:userId", async (req, res) => {
+userRouter.delete("/id/:userId", findSessionsByUserId, async (req, res) => {
   try {
     const user = await User.findByPk(req.params.userId);
+    const sessions = { sessions: req.sessions };
+    if (sessions) {
+      let arr = sessions.sessions;
+      arr.map(async function (element, index, array) {
+        const session = await Session.destroy({ where: { id: element.id } });
+      }, 80);
+    }
+
     if (user != null) {
       const user = await User.destroy({
         where: { id: req.params.userId },
       });
-      res.status(200).send("Successfully deleted");
+      res.status(200).json("Successfully deleted");
     } else {
-      res.status(404).send("User not found!");
+      res.status(404).json("User not found!");
     }
   } catch (error) {
     res.status(500).json(error);
