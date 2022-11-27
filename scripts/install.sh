@@ -6,7 +6,7 @@ echo "--------------------------------"
 echo
 sleep 1
 
-cd backend; npm i;cd ..; cd frontend; npm i
+cd backend; npm i; npm run seed; cd ..; cd frontend; npm i
 
 echo
 echo "----------------------------------"

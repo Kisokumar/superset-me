@@ -1,37 +1,37 @@
 {
-  "name": "superset-me",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "seed": "node src/db/seed.js",
-    "start": "nodemon index.js",
-    "startexpress": "nodemon index.js",
-    "startreact": "cd ../frontend/; npm run start",
-    "app": "npm-run-all --parallel seed startexpress startreact"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Kisokumar/superset-me.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Kisokumar/superset-me/issues"
-  },
-  "homepage": "https://github.com/Kisokumar/superset-me#readme",
-  "dependencies": {
-    "bcrypt": "^5.1.0",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "express-validator": "^6.14.2",
-    "mysql2": "^2.3.3",
-    "nodemon": "^2.0.20",
-    "npm-run-all": "^4.1.5",
-    "sequelize": "^6.25.5",
-    "sqlite3": "^5.1.2",
-    "uuid": "^9.0.0"
-  }
+    "name": "superset-me",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "seed": "node src/db/seed.js",
+        "start": "nodemon index.js",
+        "startexpress": "nodemon index.js",
+        "startreact": "cd ../frontend/; npm run start",
+        "app": "npm-run-all --parallel startexpress startreact"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Kisokumar/superset-me.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Kisokumar/superset-me/issues"
+    },
+    "homepage": "https://github.com/Kisokumar/superset-me#readme",
+    "dependencies": {
+        "bcrypt": "^5.1.0",
+        "cors": "^2.8.5",
+        "express": "^4.18.2",
+        "express-validator": "^6.14.2",
+        "mysql2": "^2.3.3",
+        "nodemon": "^2.0.20",
+        "npm-run-all": "^4.1.5",
+        "sequelize": "^6.25.5",
+        "sqlite3": "^5.1.2",
+        "uuid": "^9.0.0"
+    }
 }
