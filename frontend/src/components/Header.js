@@ -1,5 +1,5 @@
 function Header() {
-  return <header>SupersetMe</header>;
+  return <header className="header">SupersetMe</header>;
 }
 
 export default Header;
