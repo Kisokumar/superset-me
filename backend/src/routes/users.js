@@ -17,6 +17,22 @@ userRouter.get("/", async (req, res) => {
   }
 });
 
+// check if user exists
+userRouter.get("/exists/:username", async (req, res) => {
+  try {
+    const user = await User.findOne({
+      where: { username: req.params.username },
+    });
+    if (user == null) {
+      res.status(200).json("username not in use");
+    } else {
+      res.status(400).json("username in use");
+    }
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
 // get user by username
 userRouter.get("/username/:username", async (req, res) => {
   try {
